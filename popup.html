@@ -1,0 +1,71 @@
+<!-- popup.html -->
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Configure Whisper TTS</title>
+  <style>
+    body { font-family: Arial, sans-serif; padding: 10px; width: 300px; }
+    label { display: block; margin-top: 10px; }
+    input, select { width: 100%; padding: 5px; margin-top: 5px; }
+    button { margin-top: 15px; padding: 8px 12px; width: 100%; }
+    small { display: block; font-size: smaller; color: gray; margin-top: 5px; }
+  </style>
+</head>
+<body>
+  <h2>Configure Whisper TTS</h2>
+  <form id="configForm">
+    <label>
+      OpenAI API Key:
+      <input type="text" id="apiKey" required>
+    </label>
+    <label>
+      Model:
+      <select id="model">
+        <option value="tts-1">tts-1</option>
+        <option value="tts-1-hd">tts-1-hd</option>
+      </select>
+    </label>
+    <label>
+      Voice:
+      <select id="voice">
+        <option value="alloy">alloy</option>
+        <option value="ash">ash</option>
+        <option value="coral">coral</option>
+        <option value="echo">echo</option>
+        <option value="fable">fable</option>
+        <option value="onyx">onyx</option>
+        <option value="nova">nova</option>
+        <option value="sage">sage</option>
+        <option value="shimmer">shimmer</option>
+      </select>
+    </label>
+    <label>
+      Speed (0.25 to 4.0):
+      <input type="number" id="speed" min="0.25" max="4.0" step="0.25" value="1.0" required>
+    </label>
+    <label>
+      Response Format:
+      <select id="responseFormat">
+        <option value="mp3">mp3</option>
+        <option value="opus">opus</option>
+        <option value="aac">aac</option>
+        <option value="flac">flac</option>
+        <option value="wav">wav</option>
+        <option value="pcm">pcm</option>
+      </select>
+    </label>
+    <label>
+      Content Selector:
+      <input type="text" id="contentSelector" placeholder="e.g. article, .content, #main" required>
+      <small>
+        Enter a CSS selector to target the content container. 
+        Examples: <code><b>article</b></code>, <code><b>.content</b></code>, <code><b>#main</b></code>, <code><b>#content</b></code>.
+      </small>
+    </label>
+    <button type="submit">Save</button>
+  </form>
+
+  <script src="popup.js"></script>
+</body>
+</html>
